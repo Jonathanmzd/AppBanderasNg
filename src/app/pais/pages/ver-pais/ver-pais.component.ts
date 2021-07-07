@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
+// tab es un operador que dispara un efecto secundario 
 
 import { PaisService } from '../../services/pais.service';
+import { Country } from '../../interfaces/pais.interface';
 
 @Component({
   selector: 'app-ver-pais',
@@ -10,6 +12,10 @@ import { PaisService } from '../../services/pais.service';
   styles: [],
 })
 export class VerPaisComponent implements OnInit {
+
+  // usamos el ! para indicar que momentaneamente el pais es null
+  pais!: Country;
+
   constructor(
     private activateRoute: ActivatedRoute,
     private paisService: PaisService
@@ -27,9 +33,11 @@ export class VerPaisComponent implements OnInit {
 
     // usando un operador de rxjs switchMap toma un observable y retorna otro observable
     this.activateRoute.params
-      .pipe(switchMap((param) => this.paisService.getPaisPorAlpha(param.id)))
-      .subscribe((resp) => {
-        console.log(resp);
-      });
+      .pipe(
+        switchMap(({id}) => this.paisService.getPaisPorAlpha(id)),
+        tap(console.log)
+      )
+      .subscribe(pais => this.pais = pais);
   }
+  
 }

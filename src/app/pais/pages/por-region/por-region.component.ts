@@ -18,6 +18,10 @@ export class PorRegionComponent {
 
   constructor() { }
 
+  getClaseCSS(item:string):string{
+    return (item === this.regionActiva) ? 'btn btn-primary': 'btn btn-outline-primary';
+  }
+
   activarRegion(region:string){
     this.regionActiva = region;
 

@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Fundamentos:
+
+1. Rutas
+2. RouterLink y RouterLinkActive
+3. Componentes especializados
+4. DebounceTime
+5. Inputs
+6. SwitchMaps
+7. Consumo de APIs
+8. Tipado de datos
+9. Menú de aplicación
+10. ngClass y diferentes formas de manipular clases
+11. CSS condicionales
+12. Optimizaciones a peticiones HTTP
+13. Animaciones de CSS
+14. Auto-completado en la búsqueda de países
+
+No es una sección muy larga, pero dejaremos las bases de cómo funciona un auto-completado en general.
+En esta sección daremos los fundamentos de una aplicación SPA (Single Page Application), y luego, las seguiremos haciendo pero mediante carga perezosa (lazyload), esta es otra aplicación real que nos enseñara mucho de cómo funciona Angular y como la información fluye en ella.
